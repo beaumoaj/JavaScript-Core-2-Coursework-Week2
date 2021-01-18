@@ -1,5 +1,6 @@
 function listOfNames(arrayOfPeople) {
-  let content = document.querySelector("#content");
+  let content = document.getElementById("content");
+  content.innerHTML = convertToHtml();
 }
 
 let people = [
@@ -9,3 +10,11 @@ let people = [
 ];
 
 listOfNames(people);
+
+function convertToHtml() {
+  let html = "";
+  for (let i = 0; i < people.length; i++) {
+    html = html + `<p> ${people[i].name}</p>`;
+  }
+  return html;
+}
